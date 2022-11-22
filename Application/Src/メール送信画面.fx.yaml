@@ -1,0 +1,150 @@
+"メール送信画面 As screen.'tabletLayout_Email_ver3.0'":
+
+    RectQuickActionBar1 As rectangle:
+        Height: =64
+        Width: =Parent.Width
+        ZIndex: =1
+
+    LblAppName1 As label:
+        Height: =64
+        PaddingLeft: =0
+        Text: |-
+            ="送信メール作成
+            "
+        Width: =Parent.Width - Self.X - 64
+        Wrap: =false
+        X: =32
+        ZIndex: =2
+
+    iconMail1 As icon.Send:
+        DisabledFill: =RGBA(240, 240, 240, 0.5)
+        DisplayMode: |-
+            =/*Email must have a subject and recipients to be sent*/
+            If(Len(Trim(TextEmailSubject1.Text)) > 0 , DisplayMode.Edit, DisplayMode.Disabled)
+        Icon: =Icon.Send
+        OnSelect: |-
+            =Office365Outlook.SendEmail(
+                    "shouta.suzukii@frog-pod.com",
+                    //TextEmailTo.Text,
+                    TextEmailSubject1.Text,
+                    TextEmailMessage1.Text,
+                    {Importance: "Normal"}
+                );
+                Reset(TextEmailSubject1);
+                Reset(TextEmailMessage1);
+        PaddingBottom: =14
+        PaddingLeft: =14
+        PaddingRight: =14
+        PaddingTop: =14
+        Tooltip: ="メッセージの送信"
+        X: =Parent.Width - Self.Width
+        ZIndex: =3
+
+    LblRecipientCount1 As label:
+        PaddingLeft: =0
+        Size: =13
+        Text: ="宛先"
+        Width: =TextEmailTo.Width
+        Wrap: =false
+        X: =32
+        Y: =RectQuickActionBar1.Height + 15
+        ZIndex: =4
+
+    TextSearchBox1 As text:
+        AccessibleLabel: ="ユーザーを検索するか、電子メール アドレスを追加してください。正常に送信するには、少なくとも 1 人の受信者が必要です。"
+        Default: =""
+        HintText: ="ユーザーを検索したり、電子メール アドレスを追加したりします"
+        PaddingLeft: =50
+        Width: =Parent.Width - Self.X * 2
+        X: =32
+        Y: =LblRecipientCount1.Y + LblRecipientCount1.Height + 3
+        ZIndex: =5
+
+    SearchIcon1 As icon.Search:
+        Height: =Self.Width
+        Icon: =Icon.Search
+        PaddingBottom: =8
+        PaddingLeft: =8
+        PaddingRight: =8
+        PaddingTop: =8
+        Tooltip: ="検索"
+        Width: =TextSearchBox1.Height
+        X: =TextSearchBox1.X + 5
+        Y: =TextSearchBox1.Y
+        ZIndex: =6
+
+    AddIcon1 As icon.Add:
+        Height: =TextSearchBox1.Height
+        Icon: =Icon.Add
+        OnSelect: |-
+            =Collect(MyPeople,           
+            {DisplayName: TextSearchBox1.Text, UserPrincipalName: TextSearchBox1.Text, Mail: TextSearchBox1.Text});           
+            Reset(TextSearchBox1)
+        PaddingBottom: =5
+        PaddingLeft: =5
+        PaddingRight: =5
+        PaddingTop: =5
+        TabIndex: =0
+        Tooltip: ="ユーザーをコレクションに追加する場合に選択します"
+        Visible: |-
+            =!IsBlank(TextSearchBox1.Text) &&           
+            
+            /*Is user entry a valid email address*/           
+            IsMatch(TextSearchBox1.Text, Match.Email)           &&
+            
+            Not(Trim(TextSearchBox1.Text) in MyPeople.UserPrincipalName)
+        Width: =70
+        X: =TextSearchBox1.X + TextSearchBox1.Width - Self.Width - 10
+        Y: =TextSearchBox1.Y
+        ZIndex: =7
+
+    LblEmailSubject1 As label:
+        PaddingLeft: =0
+        Size: =13
+        Text: ="*件名"
+        Width: =Parent.Width - Self.X * 2
+        Wrap: =false
+        X: =32
+        Y: =TextEmailTo.Y + TextEmailTo.Height + 16
+        ZIndex: =9
+
+    TextEmailSubject1 As text:
+        AccessibleLabel: ="電子メールを送信するには、件名が必要です。"
+        Default: =""
+        HintText: ="件名を入力してください"
+        TabIndex: =
+        Width: =Parent.Width - Self.X * 2
+        X: =32
+        Y: =LblEmailSubject1.Y + LblEmailSubject1.Height + 3
+        ZIndex: =10
+
+    LblEmailMessage1 As label:
+        PaddingLeft: =0
+        Size: =13
+        Text: ="*本文"
+        Width: =200
+        Wrap: =false
+        X: =32
+        Y: =TextEmailSubject1.Y + TextEmailSubject1.Height + 16
+        ZIndex: =11
+
+    TextEmailMessage1 As text:
+        AccessibleLabel: ="メッセージを追加します"
+        Default: =""
+        Height: =238
+        HintText: ="本文を入力してください"
+        Mode: =TextMode.MultiLine
+        TabIndex: =
+        Width: =Parent.Width - Self.X * 2
+        X: =32
+        Y: =LblEmailMessage1.Y + LblEmailMessage1.Height + 3
+        ZIndex: =12
+
+    TextEmailTo As text:
+        Default: =sendEmail
+        DisplayMode: =DisplayMode.Disabled
+        Width: =Parent.Width - Self.X * 2
+        X: =32
+        Y: =LblRecipientCount1.Y + LblRecipientCount1.Height + 3
+        ZIndex: =14
+

@@ -1,0 +1,759 @@
+PowerAutomte編集画面 As screen:
+
+    背景グレー線_1 As label:
+        BorderColor: =RGBA(128, 128, 128, 1)
+        BorderThickness: =1
+        Height: =615
+        Text: =""
+        Width: =646
+        X: =704
+        Y: =129
+        ZIndex: =1
+
+    "Gallery共有者一覧_1 As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver4.0'":
+        BorderColor: =RGBA(128, 128, 128, 1)
+        BorderThickness: =1
+        Height: =246
+        Items: =GetAutomatesUserList
+        Layout: =Layout.Vertical
+        TemplatePadding: =0
+        TemplateSize: =40
+        Width: =323
+        X: =1027
+        Y: =498
+        ZIndex: =2
+
+        Title1_1 As label:
+            Height: =18
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: |-
+                =//ThisItem.properties.roleName
+                //ThisItem.properties.principal.userPrincipalName
+                ThisItem.properties.roleName
+            VerticalAlign: =VerticalAlign.Top
+            Width: =84
+            X: =8
+            Y: =4
+            ZIndex: =1
+
+        Subtitle1_1 As label:
+            Height: =18
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: |-
+                =//ThisItem.properties.principal.email
+                //zureAD.GetUser(ThisItem.name).mail
+                ThisItem.userEmail
+            VerticalAlign: =VerticalAlign.Top
+            Width: =315
+            X: =8
+            Y: =19
+            ZIndex: =2
+
+        Body1_1 As label:
+            Height: =18
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: |+
+                =//ThisItem.properties.principal.displayName
+                //AzureAD.GetUser(LookUp(GetAutomateUsersList,properties.roleName = Title1_1.Text).properties.principal.id).displayName
+                //AzureAD.GetUser(ThisItem.name).displayName
+                ThisItem.userName
+                
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 104
+            X: =92
+            Y: =4
+            ZIndex: =3
+
+        Separator1_1 As rectangle:
+            Fill: =RGBA(128, 128, 128, 1)
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =5
+
+    Componentヘッダー_3 As Componentヘッダー:
+        ZIndex: =3
+
+    Title使用コネクタ一覧_1 As label:
+        BorderColor: =RGBA(128, 128, 128, 1)
+        BorderThickness: =1
+        Color: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(153, 153, 153, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =34
+        Size: =10
+        Text: ="使用コネクタ"
+        Width: =323
+        X: =704
+        Y: =464
+        ZIndex: =4
+
+    FlowG As gallery.galleryVertical:
+        BorderColor: =RGBA(128, 128, 128, 1)
+        BorderThickness: =1
+        Height: =615
+        Items: =Sort(GetAutomatesData,properties.createdTime,Descending)
+        Layout: =Layout.Vertical
+        OnSelect: |-
+            =ClearCollect(GetAutomateData,PowerAutomate管理.AdminGetFlow(EnvID,ThisItem.name));
+            ClearCollect(GetAutomatesUserList,AddColumns(管理者向けPowerAutomate.GetAdminFlowOwnerRole(EnvID,ThisItem.name).value,"userName",AzureAD.GetUser(ThisRecord.name).displayName,"userEmail",AzureAD.GetUser(ThisRecord.name).mail));
+        TemplateSize: =58
+        Transition: =Transition.Pop
+        Width: =323
+        X: =373
+        Y: =129
+        ZIndex: =5
+
+        Label6_1 As label:
+            OnSelect: =Select(Parent)
+            Text: =
+            X: =40
+            Y: =18
+            ZIndex: =1
+
+        Labelアプリタイトル_1 As label:
+            FontWeight: =FontWeight.Bold
+            Height: =35
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: |
+                =ThisItem.properties.displayName
+            VerticalAlign: =VerticalAlign.Top
+            Width: =250
+            X: =24
+            ZIndex: =3
+
+        Labelアプリ作成日_1 As label:
+            Height: =16
+            OnSelect: =Select(Parent)
+            Size: =9
+            Text: =ThisItem.properties.createdTime
+            Width: =220
+            Y: =30
+            ZIndex: =7
+
+        Labelアプリ所有者_1 As label:
+            Height: =13
+            OnSelect: =Select(Parent)
+            Size: =9
+            Text: =AzureAD.GetUser(ThisItem.properties.creator.userId).displayName
+            Width: =220
+            Y: =44
+            ZIndex: =8
+
+        Rectangle2_3 As rectangle:
+            BorderStyle: =BorderStyle.Dashed
+            Fill: =RGBA(128, 128, 128, 1)
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =313
+            Y: =57
+            ZIndex: =9
+
+        Icon4_3 As icon.ChevronRight:
+            Color: =RGBA(0, 0, 0, 1)
+            Height: =21
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent)
+            Width: =23
+            X: =274
+            Y: =19
+            ZIndex: =12
+
+        AutomateICON As image:
+            Height: =19
+            Image: =PowerAutomate_scalable
+            OnSelect: =Select(Parent)
+            Width: =24
+            ZIndex: =13
+
+    TextInputAPIバージョン_1 As text:
+        BorderColor: =RGBA(128, 128, 128, 1)
+        BorderThickness: =1
+        Default: ="2021-07-01"
+        HintText: ="APIバージョン"
+        X: =669
+        Y: =27
+        ZIndex: =6
+
+    Title環境一覧_1 As label:
+        BorderColor: =RGBA(128, 128, 128, 1)
+        BorderThickness: =1
+        Fill: =RGBA(230, 230, 230, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =34
+        Size: =12
+        Text: ="環境一覧"
+        Width: =351
+        X: =14
+        Y: =95
+        ZIndex: =7
+
+    EnviromentG_1 As gallery.galleryVertical:
+        BorderColor: =RGBA(128, 128, 128, 1)
+        BorderThickness: =1
+        Height: =615
+        Items: |-
+            =//環境一覧を取得する。
+            Sort(管理者向けPowerPlatform.GetAdminEnvironment({'api-version':TextInputAPIバージョン_1.Text}).value,properties.createdTime,Descending)
+        Layout: =Layout.Vertical
+        OnSelect: |+
+            =Set(EnvID,ThisItem.name);
+            ClearCollect(GetAutomatesData,AddColumns(PowerAutomate管理.ListFlowsInEnvironment(EnvID).value,"userName",ThisRecord.properties.creator.userId));
+            
+        TemplateSize: =58
+        Transition: =Transition.Pop
+        Width: =351
+        Y: =129
+        ZIndex: =8
+
+        Label作成日_2 As label:
+            Height: =19
+            OnSelect: =Select(Parent)
+            Size: =9
+            Text: =ThisItem.properties.createdTime
+            Width: =207
+            X: =48
+            Y: =20
+            ZIndex: =2
+
+        Label環境名_1 As label:
+            FontWeight: =FontWeight.Bold
+            Height: =21
+            OnSelect: =Select(Parent)
+            Size: =10
+            Text: =ThisItem.properties.displayName
+            Width: =274
+            X: =67
+            ZIndex: =3
+
+        横線_1 As rectangle:
+            BorderStyle: =BorderStyle.Dashed
+            Fill: =RGBA(128, 128, 128, 1)
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =340
+            Y: =57
+            ZIndex: =4
+
+        Label環境タイプ_1 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(255, 0, 0, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(255, 191, 0, 1)
+            Height: =19
+            OnSelect: =Select(Parent)
+            Size: =8
+            Text: =ThisItem.properties.environmentSku
+            Width: =65
+            Y: =1
+            ZIndex: =5
+
+        Label環境ID_2 As label:
+            Height: =21
+            OnSelect: =Select(Parent)
+            Size: =9
+            Text: =ThisItem.name
+            Width: =283
+            X: =48
+            Y: =37
+            ZIndex: =6
+
+        Label作成日_3 As label:
+            Height: =18
+            OnSelect: =Select(Parent)
+            Size: =9
+            Text: ="作成日："
+            Width: =65
+            Y: =21
+            ZIndex: =7
+
+        Label環境ID_3 As label:
+            Height: =19
+            OnSelect: =Select(Parent)
+            Size: =9
+            Text: ="環境ID："
+            Width: =67
+            Y: =39
+            ZIndex: =8
+
+        Icon4_2 As icon.ChevronRight:
+            Color: =RGBA(0, 0, 0, 1)
+            Height: =21
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent)
+            Width: =23
+            X: =302
+            Y: =18
+            ZIndex: =9
+
+    TextInput所有者メール_1 As text:
+        BorderColor: =RGBA(128, 128, 128, 1)
+        BorderThickness: =1
+        Default: =User().Email
+        HintText: ="変更したい管理者"
+        X: =1026
+        Y: =27
+        ZIndex: =9
+
+    Titleアプリ一覧_1 As label:
+        BorderColor: =RGBA(128, 128, 128, 1)
+        BorderThickness: =1
+        Fill: =RGBA(230, 230, 230, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =34
+        Size: =12
+        Text: ="フロー一覧"
+        Width: =323
+        X: =373
+        Y: =95
+        ZIndex: =10
+
+    Titleアプリデータ詳細_1 As label:
+        BorderColor: =RGBA(128, 128, 128, 1)
+        BorderThickness: =1
+        Fill: =RGBA(230, 230, 230, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =34
+        Size: =12
+        Text: ="フローデータ詳細"
+        Width: =646
+        X: =704
+        Y: =95
+        ZIndex: =11
+
+    "Galleryコネクタ一覧_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        BorderColor: =RGBA(128, 128, 128, 1)
+        BorderThickness: =1
+        Height: =246
+        Items: =PowerAutomate管理.AdminGetFlow(EnvID,FlowG.Selected.name).properties.connectionReferences
+        Layout: =Layout.Vertical
+        TemplatePadding: =0
+        TemplateSize: =40
+        Width: =323
+        X: =704
+        Y: =498
+        ZIndex: =12
+
+        コネクターアイコン_1 As image:
+            Height: =40
+            Image: =ThisItem.apiDefinition.properties.iconUri
+            OnSelect: =Select(Parent)
+            Width: =40
+            ZIndex: =1
+
+        Labelコネクタ名_1 As label:
+            OnSelect: =Select(Parent)
+            PaddingLeft: =10
+            Size: =9
+            Text: =ThisItem.displayName
+            Width: =Parent.Width - コネクターアイコン_1.Width
+            X: =コネクターアイコン_1.Width
+            ZIndex: =6
+
+        コネクター一覧横線_1 As rectangle:
+            BorderStyle: =BorderStyle.Dashed
+            Fill: =RGBA(128, 128, 128, 1)
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =323
+            Y: =39
+            ZIndex: =7
+
+    背景ブロック_1 As label:
+        Fill: =RGBA(0, 0, 0, 0.5)
+        Height: =768
+        Text: =""
+        Visible: =PopUpVisible
+        Width: =1366
+        ZIndex: =17
+
+    所有者変更_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =20
+
+        Button1_2 As button:
+            BorderColor: =RGBA(255, 191, 0, 1)
+            BorderThickness: =0
+            Fill: =RGBA(255, 191, 0, 1)
+            Height: =50
+            HoverFill: =RGBA(255, 191, 0, 0.73)
+            Italic: =true
+            Text: =""
+            Tooltip: ="所有者変更"
+            Width: =50
+            X: =1213
+            Y: =148
+            ZIndex: =13
+
+        Btn所有者変更_1 As icon.AddUser:
+            AccessibleLabel: ="所有者変更"
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =25
+            HoverFill: =RGBA(255, 191, 0, 0.73)
+            Icon: =Icon.AddUser
+            OnSelect: |-
+                =//所有者変更のために、指定したメールアドレスのユーザに変更
+                Set(MyID,Office365ユーザー.SearchUserV2({searchTerm:TextInput所有者メール_1.Text}).value.Id);
+                //エラーチェックしながら、所有者変更APIを実行
+                IfError(
+                PowerAppsforAdmins.SetAdminAppOwner(EnvID,AppID,{'Content-Type':"application/json; charset=utf-8",'api-version':TextInputAPIバージョン_1.Text,newAppOwner:First(MyID).Id,roleForOldAppOwner:"CanView"}),Notify("変更に失敗しました。",NotificationType.Error)
+                );
+                Notify("管理者変更できました",NotificationType.Success);
+                Remove(GetAppsData,Filter(GetAppsData,ThisRecord.name = AppID))
+            Tooltip: ="所有者変更"
+            Width: =25
+            X: =1226
+            Y: =161
+            ZIndex: =14
+
+    アプリ削除_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =21
+
+        Button1_3 As button:
+            BorderColor: =RGBA(255, 191, 0, 1)
+            BorderThickness: =0
+            Fill: =RGBA(255, 191, 0, 1)
+            Height: =50
+            HoverColor: =RGBA(1,1,1,1)
+            HoverFill: =RGBA(255, 191, 0, 0.73)
+            Italic: =true
+            OnSelect: =Set(PopUpVisible,true)
+            Text: =""
+            Tooltip: ="削除"
+            Width: =50
+            X: =1280
+            Y: =148
+            ZIndex: =15
+
+        Btn削除_1 As icon.Trash:
+            AccessibleLabel: ="アプリ削除"
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =25
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(255, 191, 0, 0.73)
+            Icon: =Icon.Trash
+            OnSelect: =Set(PopUpVisible,true)
+            Tooltip: ="アプリ削除"
+            Width: =25
+            X: =1292
+            Y: =160
+            ZIndex: =16
+
+    Labelアプリ詳細タイトル_1 As label:
+        BorderColor: =RGBA(128, 128, 128, 1)
+        BorderThickness: =1
+        FontWeight: =FontWeight.Bold
+        Height: =50
+        Text: =FlowG.Selected.Labelアプリタイトル_1.Text
+        Width: =496
+        X: =854
+        Y: =207
+        ZIndex: =22
+
+    Labelアプリ詳細所有者名_1 As label:
+        BorderColor: =RGBA(128, 128, 128, 1)
+        BorderThickness: =1
+        Height: =35
+        Size: =12
+        Text: |-
+            =//LookUp(GetAutomateData,name = AutomateID,properties.owner.displayName)
+            
+            //管理者向けPowerAutomate.GetAdminFlowUserDetails(AutomateID
+            //GetAutomateData.value
+            //AzureAD.GetUser(FlowG.Selected.properties.creator.userId).displayName
+            FlowG.Selected.Labelアプリ所有者_1.Text
+        Width: =496
+        X: =854
+        Y: =257
+        ZIndex: =24
+
+    Title共有グループ数_1 As label:
+        Height: =18
+        Size: =12
+        Text: ="共有グループ数"
+        Width: =130
+        X: =718
+        Y: =412
+        ZIndex: =25
+
+    Label共有グループ数_1 As label:
+        Height: =18
+        Size: =12
+        Text: =LookUp(GetAppData,name = AppID,properties.sharedUsersCount)
+        Width: =64
+        X: =867
+        Y: =412
+        ZIndex: =26
+
+    削除確認ウィンドウ_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =26
+
+        削除確認背景_1 As label:
+            BorderColor: =RGBA(255, 191, 0, 1)
+            BorderThickness: =5
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =450
+            Text: =""
+            Visible: =PopUpVisible
+            Width: =600
+            X: =383
+            Y: =159
+            ZIndex: =18
+
+        注意文章_1 As label:
+            Align: =Align.Center
+            Height: =108
+            Text: ="アプリ名「"& AppName &"」を削除してよろしいですか？"
+            Visible: =PopUpVisible
+            Width: =536
+            X: =424
+            Y: =271
+            ZIndex: =19
+
+        はい_1 As button:
+            Fill: =RGBA(153, 153, 153, 1)
+            HoverFill: =ColorFade(Self.Fill, -20%)
+            OnSelect: =PowerAppsforAdmins.RemoveAdminApp(EnvID,AppID);
+            Text: ="はい"
+            Visible: =PopUpVisible
+            X: =476
+            Y: =482
+            ZIndex: =20
+
+        いいえ_1 As button:
+            Fill: =RGBA(153, 153, 153, 1)
+            HoverFill: =ColorFade(Self.Fill, -20%)
+            OnSelect: =Set(PopUpVisible,false)
+            Text: ="いいえ"
+            Visible: =PopUpVisible
+            X: =731
+            Y: =482
+            ZIndex: =21
+
+    Title共有者一覧_1 As label:
+        BorderColor: =RGBA(128, 128, 128, 1)
+        BorderThickness: =1
+        Color: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(153, 153, 153, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =34
+        Size: =10
+        Text: ="アプリ共有者一覧"
+        Width: =323
+        X: =1027
+        Y: =464
+        ZIndex: =29
+
+    Label共有ユーザー数_1 As label:
+        Align: =Align.Justify
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =18
+        Size: =10
+        Text: ="共有ユーザー数"
+        Width: =130
+        X: =1200
+        Y: =472
+        ZIndex: =30
+
+    Label共有ユーザ数_1 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =18
+        Size: =10
+        Text: =LookUp(GetAppData,name = AppID,properties.sharedUsersCount)
+        Width: =32
+        X: =1310
+        Y: =472
+        ZIndex: =31
+
+    Titleアプリ名_1 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(128, 128, 128, 1)
+        BorderThickness: =1
+        Fill: =RGBA(237, 237, 237, 1)
+        Height: =50
+        Size: =10
+        Text: ="フロー名"
+        X: =704
+        Y: =207
+        ZIndex: =32
+
+    Title所有者名_1 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(128, 128, 128, 1)
+        BorderThickness: =1
+        Fill: =RGBA(237, 237, 237, 1)
+        Height: =35
+        Size: =10
+        Text: ="所有者名"
+        X: =704
+        Y: =257
+        ZIndex: =33
+
+    TitleEmail_1 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(128, 128, 128, 1)
+        BorderThickness: =1
+        Fill: =RGBA(237, 237, 237, 1)
+        Height: =35
+        Size: =10
+        Text: ="Email"
+        X: =704
+        Y: =292
+        ZIndex: =34
+
+    Labelアプリ詳細所有者Email_1 As label:
+        BorderColor: =RGBA(128, 128, 128, 1)
+        BorderThickness: =1
+        Height: =35
+        Size: =12
+        Text: =AzureAD.GetUser(FlowG.Selected.properties.creator.userId).userPrincipalName
+        Width: =496
+        X: =854
+        Y: =292
+        ZIndex: =35
+
+    Title作成日_1 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(128, 128, 128, 1)
+        BorderThickness: =1
+        Fill: =RGBA(237, 237, 237, 1)
+        Height: =35
+        Size: =10
+        Text: ="作成日"
+        X: =704
+        Y: =326
+        ZIndex: =36
+
+    Tile最終更新日_1 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(128, 128, 128, 1)
+        BorderThickness: =1
+        Fill: =RGBA(237, 237, 237, 1)
+        Height: =35
+        Size: =10
+        Text: ="最終更新日"
+        X: =704
+        Y: =361
+        ZIndex: =37
+
+    Labelアプリ詳細所有者最終更新日_1 As label:
+        BorderColor: =RGBA(128, 128, 128, 1)
+        BorderThickness: =1
+        Height: =35
+        Size: =12
+        Text: |-
+            =//LookUp(GetAutomateData,name = AutomateID,properties.lastModifiedTime)
+            FlowG.Selected.properties.lastModifiedTime
+        Width: =496
+        X: =854
+        Y: =361
+        ZIndex: =38
+
+    Labelアプリ詳細所有者作成日_1 As label:
+        BorderColor: =RGBA(128, 128, 128, 1)
+        BorderThickness: =1
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =35
+        Size: =12
+        Text: |-
+            =//LookUp(GetAutomateData,name = AutomateID,properties.createdTime)
+            FlowG.Selected.properties.createdTime
+        Width: =496
+        X: =854
+        Y: =326
+        ZIndex: =39
+
+    Btnブラウザ確認_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =40
+
+        アプリ確認背景_1 As button:
+            BorderColor: =RGBA(255, 191, 0, 1)
+            BorderThickness: =0
+            Fill: =RGBA(255, 191, 0, 1)
+            Height: =50
+            HoverFill: =RGBA(255, 191, 0, 0.73)
+            Italic: =true
+            OnSelect: =Launch(LookUp(GetAppData,name = AppID,properties.appOpenUri))
+            Text: =""
+            Tooltip: ="実際のアプリ確認"
+            Width: =50
+            X: =1147
+            Y: =149
+            ZIndex: =27
+
+        ブラウザアイコン_1 As icon.Publish:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =25
+            Icon: =Icon.Publish
+            OnSelect: =Launch(LookUp(GetAppData,name = AppID,properties.appOpenUri))
+            Width: =25
+            X: =1160
+            Y: =162
+            ZIndex: =28
+
+    メール送信_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =43
+
+        メール送信背景_1 As button:
+            BorderColor: =RGBA(255, 191, 0, 1)
+            BorderThickness: =0
+            Fill: =RGBA(255, 191, 0, 1)
+            Height: =50
+            HoverFill: =RGBA(255, 191, 0, 0.73)
+            Italic: =true
+            OnSelect: =Navigate(メール送信画面,ScreenTransition.Fade)
+            Text: =""
+            Tooltip: ="所有者にお問合せ"
+            Width: =50
+            X: =1076
+            Y: =149
+            ZIndex: =40
+
+        メールアイコン_1 As icon.Mail:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =25
+            Icon: =Icon.Mail
+            Width: =25
+            X: =1089
+            Y: =162
+            ZIndex: =42
+
