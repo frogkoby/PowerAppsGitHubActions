@@ -1,0 +1,208 @@
+{
+  "3c6d6597-6b33-41c5-b01d-74185dd526e6": {
+    "connectionParameters": {},
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "ロジック フロー",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1534/1.0.1534.2605/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "8adef0b9-d426-4d7c-a7ef-1c1826bf8348": {
+          "value": "shared_office365users"
+        },
+        "9d914ece-d407-4334-868d-930e39f8d85a": {
+          "value": "shared_powerappsforadmins"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "97a8f4e6-2da2-4519-95ca-18fe099d6598"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_office365users": {
+          "value": "8adef0b9-d426-4d7c-a7ef-1c1826bf8348"
+        },
+        "shared_powerappsforadmins": {
+          "value": "9d914ece-d407-4334-868d-930e39f8d85a"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "97a8f4e6-2da2-4519-95ca-18fe099d6598"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "所有者を設定する"
+    ],
+    "dependencies": {
+      "shared_office365users": "8adef0b9-d426-4d7c-a7ef-1c1826bf8348",
+      "shared_powerappsforadmins": "9d914ece-d407-4334-868d-930e39f8d85a"
+    },
+    "dependents": [],
+    "id": "3c6d6597-6b33-41c5-b01d-74185dd526e6"
+  },
+  "422886ab-309d-4762-98a4-36e30a49b42e": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Office 365 Outlook",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1599/1.0.1599.3017/office365/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365Outlook"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "422886ab-309d-4762-98a4-36e30a49b42e"
+  },
+  "44bc2886-ca36-40b8-9a42-f39681000c7f": {
+    "connectionParameters": {},
+    "connectionRef": {
+      "apiTier": "Standard",
+      "authenticationType": "firstParty",
+      "displayName": "Power Automate 管理",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1604/1.0.1604.3062/flowmanagement/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_flowmanagement",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "PowerAutomate管理"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "44bc2886-ca36-40b8-9a42-f39681000c7f"
+  },
+  "8adef0b9-d426-4d7c-a7ef-1c1826bf8348": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Office 365 ユーザー",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1593/1.0.1593.2980/office365users/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365users",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365ユーザー"
+    ],
+    "dependencies": {},
+    "dependents": [
+      "3c6d6597-6b33-41c5-b01d-74185dd526e6"
+    ],
+    "id": "8adef0b9-d426-4d7c-a7ef-1c1826bf8348"
+  },
+  "9578a68e-2a0c-4eba-9e48-036de8321bf6": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Azure AD",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1600/1.0.1600.3026/azuread/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_azuread",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "AzureAD"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "9578a68e-2a0c-4eba-9e48-036de8321bf6"
+  },
+  "9d914ece-d407-4334-868d-930e39f8d85a": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Power Apps for Admins",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1591/1.0.1591.2961/powerappsforadmins/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_powerappsforadmins",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "PowerAppsforAdmins"
+    ],
+    "dependencies": {},
+    "dependents": [
+      "3c6d6597-6b33-41c5-b01d-74185dd526e6"
+    ],
+    "id": "9d914ece-d407-4334-868d-930e39f8d85a"
+  },
+  "a7858269-8d6c-44fc-a11d-27ff34369849": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "管理者向け Power Automate",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1551/1.0.1551.2693/microsoftflowforadmins/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_microsoftflowforadmins",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "管理者向けPowerAutomate"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "a7858269-8d6c-44fc-a11d-27ff34369849"
+  },
+  "b008c8c7-347b-4b59-9a71-72868991c032": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "管理者向け Power Platform",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1602/1.0.1602.3056/powerplatformforadmins/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_powerplatformforadmins",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "管理者向けPowerPlatform"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "b008c8c7-347b-4b59-9a71-72868991c032"
+  },
+  "f44b7ae9-2485-4eea-b24f-aeea1ec09ed1": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "作成者向け Power Apps",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1551/1.0.1551.2693/powerappsforappmakers/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_powerappsforappmakers",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "作成者向けPowerApps"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "f44b7ae9-2485-4eea-b24f-aeea1ec09ed1"
+  }
+}

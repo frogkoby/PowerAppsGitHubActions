@@ -1,0 +1,34 @@
+Screen2 As screen:
+
+    Gallery1 As gallery.galleryVertical:
+        Items: =PowerAutomate管理.ListFlowsInEnvironment(EnvID).value
+        Layout: =Layout.Vertical
+        TemplateSize: =52
+        Width: =1285
+        X: =40
+        Y: =40
+        ZIndex: =1
+
+        Label3 As label:
+            Height: =36
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.properties.displayName
+            Width: =496
+            X: =16
+            Y: =16
+            ZIndex: =1
+
+        Label4 As label:
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.name
+            X: =607
+            Y: =86
+            ZIndex: =2
+
+        Label5 As label:
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.name
+            X: =1063
+            Y: =141
+            ZIndex: =3
+

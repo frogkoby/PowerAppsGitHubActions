@@ -1,0 +1,156 @@
+タイトル As screen:
+
+    ヘッダー上部線_3 As label:
+        Align: =Align.Center
+        Fill: =RGBA(158, 229, 7, 1)
+        Height: =5
+        Text: =""
+        Width: =1366
+        Y: =763
+        ZIndex: =4
+
+    右下草 As image:
+        Height: =220
+        Image: =img_main_bottom_right_01
+        Width: =350
+        X: =1016
+        Y: =548
+        ZIndex: =5
+
+    ヘッダー上部線_2 As label:
+        Align: =Align.Center
+        Fill: =RGBA(158, 229, 7, 1)
+        Height: =5
+        Text: =""
+        Width: =1366
+        ZIndex: =6
+
+    会社ロゴ_2 As image:
+        Height: =65
+        Image: =logo
+        Width: =166
+        X: =599
+        Y: =207
+        ZIndex: =7
+
+    アプリタイトル_2 As label:
+        Align: =Align.Center
+        Font: =Font.Arial
+        Height: =87
+        Size: =36
+        Text: ="Power Platform管理アプリ"
+        Width: =703
+        X: =331
+        Y: =309
+        ZIndex: =8
+
+    左下草 As image:
+        Height: =411
+        Image: =img_main_bottom_left_01
+        Width: =411
+        Y: =357
+        ZIndex: =9
+
+    カエルアニメーション As image:
+        Height: =122
+        Image: =img_main_frog
+        Width: =178
+        X: =966
+        Y: =646
+        ZIndex: =10
+
+    左上草 As image:
+        Height: =206
+        Image: =img_main_bottom_right_01
+        ImageRotation: =ImageRotation.Rotate180
+        Width: =331
+        ZIndex: =11
+
+    右上草 As image:
+        Height: =422
+        Image: =img_main_bottom_left_01
+        ImageRotation: =ImageRotation.Rotate180
+        Width: =422
+        X: =944
+        ZIndex: =12
+
+    Label10 As label:
+        Align: =Align.Center
+        Text: ="アプリを選択してください"
+        Width: =220
+        X: =572
+        Y: =633
+        ZIndex: =13
+
+    BtnPowerApps As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =15
+
+        ボタン背景 As button:
+            BorderThickness: =1
+            Fill: =RGBA(237, 237, 237, 1)
+            Height: =140
+            HoverColor: =Self.Color
+            HoverFill: =ColorFade(Self.Color, -20%)
+            Text: =""
+            X: =489
+            Y: =442
+            ZIndex: =2
+
+        PowerAppsICON As image:
+            AutoDisableOnSelect: =false
+            Image: =PowerApps_scalable
+            X: =519
+            Y: =462
+            ZIndex: =3
+
+        PowerApps透明ボタン As button:
+            AutoDisableOnSelect: =false
+            BorderThickness: =1
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =140
+            HoverFill: =RGBA(0,0,0,0)
+            OnSelect: =Navigate(PowerApps編集画面,ScreenTransition.Fade)
+            PressedFill: =RGBA(0,0,0,0)
+            Text: =""
+            X: =489
+            Y: =442
+            ZIndex: =15
+
+    BrtnPowerAutomate As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =17
+
+        ボタン背景_1 As button:
+            BorderThickness: =1
+            Fill: =RGBA(237, 237, 237, 1)
+            Height: =140
+            Text: =""
+            X: =718
+            Y: =442
+            ZIndex: =1
+
+        PowerAutomateICON As image:
+            Image: =PowerAutomate_scalable
+            X: =755
+            Y: =462
+            ZIndex: =14
+
+        PowerApps透明ボタン_1 As button:
+            BorderThickness: =1
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =140
+            HoverFill: =RGBA(0,0,0,0)
+            OnSelect: =Navigate(PowerApps編集画面,ScreenTransition.Fade)
+            PressedFill: =RGBA(0,0,0,0)
+            Text: =""
+            X: =718
+            Y: =442
+            ZIndex: =16
+

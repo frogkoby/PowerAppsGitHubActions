@@ -1,0 +1,65 @@
+Componentヘッダー As CanvasComponent:
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =77
+    Width: =1366
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    ヘッダー As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =7
+
+        ヘッダー背景 As label:
+            Fill: =RGBA(158, 229, 7, 0.06)
+            Height: =69
+            Text: =""
+            Width: =1366
+            Y: =6
+            ZIndex: =1
+
+        ヘッダー上部線 As label:
+            Align: =Align.Center
+            Fill: =RGBA(158, 229, 7, 1)
+            Height: =5
+            Text: =""
+            Width: =1366
+            ZIndex: =2
+
+        会社ロゴ As image:
+            Height: =50
+            Image: =logo
+            X: =22
+            Y: =17
+            ZIndex: =3
+
+        アプリタイトル As label:
+            FontWeight: =FontWeight.Bold
+            Height: =26
+            Text: ="Power Platform管理アプリ"
+            Width: =468
+            X: =149
+            Y: =29
+            ZIndex: =4
+
+        グレー線 As label:
+            Align: =Align.Center
+            Fill: =RGBA(158, 229, 7, 1)
+            Height: =1
+            Text: =""
+            Width: =1366
+            Y: =75
+            ZIndex: =5
+
+        グリーン線 As label:
+            Align: =Align.Center
+            Fill: =RGBA(230, 230, 230, 1)
+            Height: =1
+            Text: =""
+            Width: =1366
+            Y: =76
+            ZIndex: =6
+
