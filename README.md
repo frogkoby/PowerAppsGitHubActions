@@ -1,1 +1,3 @@
 # PowerAppsGitHubActions
+Power Appsのソースコード管理テスト
+GitHub Actionsで環境へ自動デプロイする
