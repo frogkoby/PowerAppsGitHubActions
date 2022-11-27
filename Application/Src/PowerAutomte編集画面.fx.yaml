@@ -274,7 +274,7 @@ PowerAutomte編集画面 As screen:
             OnSelect: =Select(Parent)
             Size: =9
             Text: =ThisItem.name
-            Width: =283
+            Width: =293
             X: =48
             Y: =37
             ZIndex: =6
