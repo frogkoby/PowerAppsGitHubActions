@@ -95,6 +95,7 @@
             Height: =140
             HoverColor: =Self.Color
             HoverFill: =ColorFade(Self.Color, -20%)
+            OnSelect: =Navigate(PowerApps編集画面,ScreenTransition.Fade)
             Text: =""
             X: =489
             Y: =442
@@ -103,6 +104,7 @@
         PowerAppsICON As image:
             AutoDisableOnSelect: =false
             Image: =PowerApps_scalable
+            OnSelect: =Navigate(PowerApps編集画面,ScreenTransition.Fade)
             X: =519
             Y: =462
             ZIndex: =3
@@ -147,7 +149,7 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =140
             HoverFill: =RGBA(0,0,0,0)
-            OnSelect: =Navigate(PowerApps編集画面,ScreenTransition.Fade)
+            OnSelect: =Navigate(PowerAutomate編集画面,ScreenTransition.Fade)
             PressedFill: =RGBA(0,0,0,0)
             Text: =""
             X: =718
