@@ -138,11 +138,11 @@ PowerApps編集画面 As screen:
             ZIndex: =7
 
         Labelアプリ所有者 As label:
-            Height: =16
+            Height: =23
             OnSelect: =Select(Parent)
             Size: =9
             Text: =ThisItem.properties.owner.userPrincipalName
-            Width: =223
+            Width: =313
             Y: =34
             ZIndex: =8
 
@@ -455,7 +455,6 @@ PowerApps編集画面 As screen:
     Labelアプリ詳細タイトル As label:
         BorderColor: =RGBA(128, 128, 128, 1)
         BorderThickness: =1
-        Color: =RGBA(255, 255, 255, 1)
         FontWeight: =FontWeight.Bold
         Height: =50
         OnSelect: =AppName
