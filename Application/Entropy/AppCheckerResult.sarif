@@ -2707,36 +2707,6 @@
           },
           "ruleId": "app-UnusedMediaResources",
           "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "メール送信画面.FlowName"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "メール送信画面.FlowName",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FlowName",
-                "module": "メール送信画面",
-                "type": "メール送信画面"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 5
         }
       ],
       "tool": {
@@ -2827,23 +2797,6 @@
                 "level": "Medium",
                 "primaryCategory": "performance",
                 "whyFix": "このメディア ファイルは、コントロールの式によって参照されていないため、不要です。削除するとパフォーマンスが向上します。"
-              }
-            },
-            {
-              "id": "app-UnusedVariables",
-              "messageStrings": {
-                "issue": {
-                  "text": "未使用の変数"
-                }
-              },
-              "properties": {
-                "componentType": "app",
-                "howToFix": [
-                  "未使用の変数を削除してください。"
-                ],
-                "level": "Medium",
-                "primaryCategory": "performance",
-                "whyFix": "この変数は、宣言されていますが、どのコントロールによっても参照されていないため、不要です。"
               }
             }
           ],
