@@ -42,7 +42,7 @@ Componentヘッダー As CanvasComponent:
             Text: ="Power Platform管理アプリ"
             Width: =468
             X: =149
-            Y: =29
+            Y: =19
             ZIndex: =4
 
         グレー線 As label:

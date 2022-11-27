@@ -762,7 +762,25 @@ PowerApps編集画面 As screen:
         Icon: =Icon.Home
         OnSelect: =Navigate(タイトル)
         Width: =44
-        X: =398
-        Y: =17
+        X: =556
+        Y: =13
         ZIndex: =44
+
+    PowerAppsICON_2 As image:
+        AutoDisableOnSelect: =false
+        Height: =26
+        Image: =PowerApps_scalable
+        Width: =32
+        X: =156
+        Y: =43
+        ZIndex: =45
+
+    Label1 As label:
+        Color: =RGBA(150, 0, 98, 1)
+        FontWeight: =FontWeight.Bold
+        Size: =10
+        Text: ="Power Apps管理"
+        X: =189
+        Y: =37
+        ZIndex: =46
 

@@ -89,7 +89,7 @@
         "Name": "ヘッダー上部線",
         "Parent": "Componentヘッダー",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 181,
+        "PublishOrderIndex": 183,
         "Rules": [
           {
             "Category": "Data",
@@ -420,7 +420,7 @@
         "Name": "ヘッダー背景",
         "Parent": "Componentヘッダー",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 182,
+        "PublishOrderIndex": 185,
         "Rules": [
           {
             "Category": "Data",
@@ -720,7 +720,7 @@
         "Name": "会社ロゴ",
         "Parent": "Componentヘッダー",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 183,
+        "PublishOrderIndex": 186,
         "Rules": [
           {
             "Category": "Data",
@@ -998,7 +998,7 @@
         "Name": "アプリタイトル",
         "Parent": "Componentヘッダー",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 184,
+        "PublishOrderIndex": 187,
         "Rules": [
           {
             "Category": "Data",
@@ -1092,7 +1092,7 @@
           },
           {
             "Category": "Design",
-            "InvariantScript": "29",
+            "InvariantScript": "19",
             "Property": "Y",
             "RuleProviderType": "Unknown"
           },
@@ -1336,7 +1336,7 @@
         "Name": "グレー線",
         "Parent": "Componentヘッダー",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 186,
+        "PublishOrderIndex": 188,
         "Rules": [
           {
             "Category": "Data",
@@ -1681,7 +1681,7 @@
         "Name": "グリーン線",
         "Parent": "Componentヘッダー",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 187,
+        "PublishOrderIndex": 189,
         "Rules": [
           {
             "Category": "Data",
@@ -1965,7 +1965,7 @@
         "Name": "ヘッダー",
         "Parent": "Componentヘッダー",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 185,
+        "PublishOrderIndex": 184,
         "Rules": [
           {
             "Category": "Design",
@@ -2037,7 +2037,7 @@
       "Y",
       "ZIndex"
     ],
-    "LastModifiedTimestamp": "638051517526312805",
+    "LastModifiedTimestamp": "638051526453095807",
     "Name": "Componentヘッダー",
     "Rules": [
       {
@@ -2096,7 +2096,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638051517526312805",
+  "LastModifiedTimestamp": "638051526453095807",
   "Name": "bb4686d057dd472ea65b2093d16d58fa",
   "OverridableProperties": {},
   "Version": "637936171810943734"
