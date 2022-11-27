@@ -223,6 +223,7 @@ PowerAutomte編集画面 As screen:
         TemplateSize: =58
         Transition: =Transition.Pop
         Width: =351
+        X: =13
         Y: =129
         ZIndex: =8
 
