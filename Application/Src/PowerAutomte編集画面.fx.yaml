@@ -745,7 +745,7 @@ PowerAutomte編集画面 As screen:
             OnSelect: |-
                 =Set(MailAddress,Labelアプリ詳細所有者Email_1.Text);
                 Set(FlowName,Labelアプリタイトル_1.Text);
-                Navigate(メール送信画面,ScreenTransition.Fade,{sendEmail:MailAddress})
+                Navigate(メール送信画面,ScreenTransition.Fade,{sendEmail:MailAddress,AppName:FlowName})
             Text: =""
             Tooltip: ="メール送信"
             Width: =50
@@ -760,7 +760,7 @@ PowerAutomte編集画面 As screen:
             OnSelect: |-
                 =Set(MailAddress,Labelアプリ詳細所有者Email_1.Text);
                 Set(FlowName,Labelアプリタイトル_1.Text);
-                Navigate(メール送信画面,ScreenTransition.Fade,{sendEmail:MailAddress})
+                Navigate(メール送信画面,ScreenTransition.Fade,{sendEmail:MailAddress,AppName:FlowName})
             Tooltip: ="メール送信"
             Width: =25
             X: =1089
