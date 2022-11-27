@@ -163,19 +163,6 @@
         Y: =655
         ZIndex: =13
 
-    Icon1_3 As icon.Home:
-        Color: =RGBA(0, 0, 0, 1)
-        Height: =36
-        Icon: =Icon.Home
-        OnSelect: |-
-            =Reset(TextEmailSubject1);
-            Reset(TextEmailMessage1);
-            Back()
-        Width: =31
-        X: =413
-        Y: =20
-        ZIndex: =14
-
     Icon2 As icon.Reset:
         Color: =RGBA(0, 0, 0, 1)
         Height: =33
@@ -185,7 +172,7 @@
             Reset(TextEmailMessage1);
             Back()
         Width: =33
-        X: =456
-        Y: =23
+        X: =1301
+        Y: =22
         ZIndex: =15
 
