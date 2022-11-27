@@ -2713,17 +2713,17 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "メール送信画面.AppName"
+                  "fullyQualifiedName": "メール送信画面.FlowName"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "メール送信画面.AppName",
+                  "fullyQualifiedName": "メール送信画面.FlowName",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "AppName",
+                "member": "FlowName",
                 "module": "メール送信画面",
                 "type": "メール送信画面"
               }
