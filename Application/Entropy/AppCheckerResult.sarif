@@ -137,50 +137,10 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 5,
-                  "charOffset": 116,
-                  "snippet": {
-                    "text": ".text"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "PowerApps編集画面",
-                "type": "PowerApps編集画面.メール送信背景"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "text"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "PowerApps編集画面.メール送信背景.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "PowerApps編集画面.メール送信背景.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 125,
+                  "charLength": 126,
                   "charOffset": 0,
                   "snippet": {
-                    "text": "Navigate(\r\n    メール送信画面,\r\n    ScreenTransition.Fade,\r\n    {sendEmail: Labelアプリ詳細所有者Email.Text,FlowName:Labelアプリ詳細タイトル.text}\r\n)"
+                    "text": "Navigate(\r\n    メール送信画面,\r\n    ScreenTransition.Fade,\r\n    {sendEmail: Labelアプリ詳細所有者Email.Text,FlowName: Labelアプリ詳細タイトル.Text}\r\n)"
                   }
                 }
               },
