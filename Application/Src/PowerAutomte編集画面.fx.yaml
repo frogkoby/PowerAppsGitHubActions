@@ -744,6 +744,7 @@ PowerAutomte編集画面 As screen:
             Italic: =true
             OnSelect: |-
                 =Set(MailAddress,Labelアプリ詳細所有者Email_1.Text);
+                Set(FlowName,Labelアプリタイトル_1.Text);
                 Navigate(メール送信画面,ScreenTransition.Fade,{sendEmail:MailAddress})
             Text: =""
             Tooltip: ="メール送信"
@@ -758,6 +759,7 @@ PowerAutomte編集画面 As screen:
             Icon: =Icon.Mail
             OnSelect: |-
                 =Set(MailAddress,Labelアプリ詳細所有者Email_1.Text);
+                Set(FlowName,Labelアプリタイトル_1.Text);
                 Navigate(メール送信画面,ScreenTransition.Fade,{sendEmail:MailAddress})
             Tooltip: ="メール送信"
             Width: =25
