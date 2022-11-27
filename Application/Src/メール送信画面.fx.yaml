@@ -170,7 +170,7 @@
         OnSelect: |-
             =Reset(TextEmailSubject1);
             Reset(TextEmailMessage1);
-            Navigate(タイトル)
+            Back()
         Width: =31
         X: =413
         Y: =20
