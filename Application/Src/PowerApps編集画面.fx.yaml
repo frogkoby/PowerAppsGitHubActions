@@ -728,12 +728,7 @@ PowerApps編集画面 As screen:
             Height: =50
             HoverFill: =RGBA(255, 191, 0, 0.73)
             Italic: =true
-            OnSelect: |-
-                =Navigate(
-                    メール送信画面,
-                    ScreenTransition.Fade,
-                    {sendEmail: Labelアプリ詳細所有者Email.Text,FlowName: Labelアプリ詳細タイトル.Text}
-                );
+            OnSelect: =
             Text: =""
             Tooltip: ="所有者にお問合せ"
             Width: =50
@@ -745,12 +740,7 @@ PowerApps編集画面 As screen:
             Color: =RGBA(255, 255, 255, 1)
             Height: =25
             Icon: =Icon.Mail
-            OnSelect: |-
-                =Navigate(
-                    メール送信画面,
-                    ScreenTransition.Fade,
-                    {sendEmail: Labelアプリ詳細所有者Email.Text,FlowName:Labelアプリ詳細タイトル.text}
-                );
+            OnSelect: =
             Width: =25
             X: =1089
             Y: =162
