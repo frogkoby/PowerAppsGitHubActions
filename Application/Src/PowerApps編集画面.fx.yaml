@@ -732,7 +732,7 @@ PowerApps編集画面 As screen:
                 =Navigate(
                     メール送信画面,
                     ScreenTransition.Fade,
-                    {sendEmail: Labelアプリ詳細所有者Email.Text}
+                    {sendEmail: Labelアプリ詳細所有者Email.Text,FlowName:FlowName}
                 );
             Text: =""
             Tooltip: ="所有者にお問合せ"
@@ -749,7 +749,7 @@ PowerApps編集画面 As screen:
                 =Navigate(
                     メール送信画面,
                     ScreenTransition.Fade,
-                    {sendEmail: Labelアプリ詳細所有者Email.Text}
+                    {sendEmail: Labelアプリ詳細所有者Email.Text,FlowName:FlowName}
                 );
             Width: =25
             X: =1089
