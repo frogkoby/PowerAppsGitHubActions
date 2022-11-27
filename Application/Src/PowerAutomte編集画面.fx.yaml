@@ -461,7 +461,7 @@ PowerAutomte編集画面 As screen:
             HoverFill: =RGBA(255, 191, 0, 0.73)
             Icon: =Icon.Trash
             OnSelect: =Set(PopUpVisible,true)
-            Tooltip: ="アプリ削除"
+            Tooltip: ="削除"
             Width: =25
             X: =1292
             Y: =160
@@ -711,7 +711,7 @@ PowerAutomte編集画面 As screen:
             Italic: =true
             OnSelect: =Launch(LookUp(GetAppData,name = AppID,properties.appOpenUri))
             Text: =""
-            Tooltip: ="実際のアプリ確認"
+            Tooltip: ="アプリ起動"
             Width: =50
             X: =1147
             Y: =149
@@ -722,6 +722,7 @@ PowerAutomte編集画面 As screen:
             Height: =25
             Icon: =Icon.Publish
             OnSelect: =Launch(LookUp(GetAppData,name = AppID,properties.appOpenUri))
+            Tooltip: ="アプリ起動"
             Width: =25
             X: =1160
             Y: =162
@@ -743,7 +744,7 @@ PowerAutomte編集画面 As screen:
             Italic: =true
             OnSelect: =Navigate(メール送信画面,ScreenTransition.Fade)
             Text: =""
-            Tooltip: ="所有者にお問合せ"
+            Tooltip: ="メール送信"
             Width: =50
             X: =1076
             Y: =149
@@ -753,6 +754,7 @@ PowerAutomte編集画面 As screen:
             Color: =RGBA(255, 255, 255, 1)
             Height: =25
             Icon: =Icon.Mail
+            Tooltip: ="メール送信"
             Width: =25
             X: =1089
             Y: =162
