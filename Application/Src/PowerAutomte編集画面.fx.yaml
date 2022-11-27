@@ -727,6 +727,16 @@ PowerAutomte編集画面 As screen:
             Y: =162
             ZIndex: =28
 
+    Icon1 As icon.Home:
+        Color: =RGBA(255, 191, 0, 1)
+        Height: =50
+        Icon: =Icon.Home
+        OnSelect: =Navigate(タイトル)
+        Width: =44
+        X: =398
+        Y: =17
+        ZIndex: =43
+
     メール送信_1 As group:
         Height: =5
         Width: =5
