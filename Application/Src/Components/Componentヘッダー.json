@@ -89,7 +89,7 @@
         "Name": "ヘッダー上部線",
         "Parent": "Componentヘッダー",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 188,
+        "PublishOrderIndex": 187,
         "Rules": [
           {
             "Category": "Data",
@@ -420,7 +420,7 @@
         "Name": "ヘッダー背景",
         "Parent": "Componentヘッダー",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 190,
+        "PublishOrderIndex": 189,
         "Rules": [
           {
             "Category": "Data",
@@ -720,7 +720,7 @@
         "Name": "会社ロゴ",
         "Parent": "Componentヘッダー",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 191,
+        "PublishOrderIndex": 190,
         "Rules": [
           {
             "Category": "Data",
@@ -998,7 +998,7 @@
         "Name": "アプリタイトル",
         "Parent": "Componentヘッダー",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 192,
+        "PublishOrderIndex": 191,
         "Rules": [
           {
             "Category": "Data",
@@ -1336,7 +1336,7 @@
         "Name": "グレー線",
         "Parent": "Componentヘッダー",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 193,
+        "PublishOrderIndex": 192,
         "Rules": [
           {
             "Category": "Data",
@@ -1681,7 +1681,7 @@
         "Name": "グリーン線",
         "Parent": "Componentヘッダー",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 194,
+        "PublishOrderIndex": 193,
         "Rules": [
           {
             "Category": "Data",
@@ -1965,7 +1965,7 @@
         "Name": "ヘッダー",
         "Parent": "Componentヘッダー",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 189,
+        "PublishOrderIndex": 188,
         "Rules": [
           {
             "Category": "Design",
