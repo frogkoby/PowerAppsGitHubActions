@@ -110,7 +110,7 @@
 
     TextEmailSubject1 As text:
         AccessibleLabel: ="電子メールを送信するには、件名が必要です。"
-        Default: =FlowName & "アプリ所在確認のお願い"
+        Default: =FlowName & "：利用確認のお願い"
         HintText: ="件名を入力してください"
         TabIndex: =
         Width: =Parent.Width - Self.X * 2
