@@ -459,7 +459,7 @@ PowerApps編集画面 As screen:
         FontWeight: =FontWeight.Bold
         Height: =50
         OnSelect: =AppName
-        Text: =LookUp(GetAppData,name = AppID,properties.displayName)
+        Text: =AppG.Selected.Labelアプリタイトル.Text
         Width: =496
         X: =854
         Y: =207
