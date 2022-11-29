@@ -89,7 +89,7 @@
         "Name": "ヘッダー上部線",
         "Parent": "Componentヘッダー",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 187,
+        "PublishOrderIndex": 188,
         "Rules": [
           {
             "Category": "Data",
@@ -1336,7 +1336,7 @@
         "Name": "グレー線",
         "Parent": "Componentヘッダー",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 192,
+        "PublishOrderIndex": 193,
         "Rules": [
           {
             "Category": "Data",
@@ -1681,7 +1681,7 @@
         "Name": "グリーン線",
         "Parent": "Componentヘッダー",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 193,
+        "PublishOrderIndex": 194,
         "Rules": [
           {
             "Category": "Data",
@@ -1965,7 +1965,7 @@
         "Name": "ヘッダー",
         "Parent": "Componentヘッダー",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 188,
+        "PublishOrderIndex": 192,
         "Rules": [
           {
             "Category": "Design",
@@ -2037,7 +2037,7 @@
       "Y",
       "ZIndex"
     ],
-    "LastModifiedTimestamp": "638051526453095807",
+    "LastModifiedTimestamp": "638053300926086233",
     "Name": "Componentヘッダー",
     "Rules": [
       {
@@ -2096,7 +2096,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638051526453095807",
+  "LastModifiedTimestamp": "638053300926086233",
   "Name": "bb4686d057dd472ea65b2093d16d58fa",
   "OverridableProperties": {},
   "Version": "637936171810943734"
